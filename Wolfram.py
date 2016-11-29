@@ -1,6 +1,6 @@
 import wolframalpha
 from flask import Flask, render_template
-from flask_ask import Ask, statement
+from flask_ask import *
 from variables import *
 
 client = wolframalpha.Client(WOLFRAMALPHA_API_KEY)
@@ -22,6 +22,6 @@ def search(query):
         response = response['pod'][1]['subpod']['plaintext']
     except:
         response = "Unable to find answer!"
-    return statement(response).reprompt(reprompt_text).simple_card('WolframAlpha', response)
+    return statement(response).simple_card('WolframAlpha', response)
 
 app.run()
