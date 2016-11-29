@@ -1,0 +1,13 @@
+{
+  "intents":[
+    {
+      "intent": "Search",
+      "slots": [
+        {
+          "name": "Query",
+          "type": "QUERIES"
+        }
+      ]
+    }
+  ]
+}

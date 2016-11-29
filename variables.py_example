@@ -1,1 +1,2 @@
-app_id = 'abcxyz123'
+WOLFRAMALPHA_API_KEY = 'appid'
+app_id = 'appid'
