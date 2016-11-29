@@ -16,12 +16,12 @@ def launch():
 
 @ask.intent('Search', mapping={'query': 'Query'})
 def search(query):
-    print(query)
+    reprompt_text = "Im sorry, I didnt get that, what would you like me to search for?"
     response = client.query(query)
     try:
         response = response['pod'][1]['subpod']['plaintext']
     except:
         response = "Unable to find answer!"
-    print(response)
+    return statement(response).reprompt(reprompt_text).simple_card('WolframAlpha', response)
 
 app.run()
